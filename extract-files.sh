@@ -65,6 +65,9 @@ function blob_fixup {
             ;;
         vendor/lib/hw/audio.primary.mt6785.so)
             ;&
+        vendor/lib/libMtkOmxVdecEx.so)
+            "${PATCHELF}" --replace-needed "libui.so" "libui-v28.so" "${2}"
+            ;;
         vendor/lib64/hw/audio.primary.mt6785.so)
             "${PATCHELF}" --replace-needed "libmedia_helper.so" "libmedia_helper-v30.so" "${2}"
             ;;
